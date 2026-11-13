@@ -11,3 +11,80 @@ The main reason I decided to do pokemon was because I had a few questions I want
 What is the most common type 1 and type 2 for pokemon?
 What is the correlation of all the stats of all the pokemon
 How could I use this data?
+
+
+
+As for the cleaning methods I used, the data was already very clean but I did decide not to include mega evolutions.
+I simply just made a df for each generation without mega evolutions
+
+''' generation1_no_mega = Generation_1_Pokemon[~(Generation_1_Pokemon['Name'].str.contains('Mega', case=True, na=False) & (Generation_1_Pokemon['Name'] != 'Meganium'))]
+generation2_no_mega = Generation_2_Pokemon[~(Generation_2_Pokemon['Name'].str.contains('Mega', case=True, na=False) & (Generation_2_Pokemon['Name'] != 'Meganium'))]
+generation3_no_mega = Generation_3_Pokemon[~(Generation_3_Pokemon['Name'].str.contains('Mega', case=True, na=False) & (Generation_3_Pokemon['Name'] != 'Meganium'))]
+generation4_no_mega = Generation_4_Pokemon[~(Generation_4_Pokemon['Name'].str.contains('Mega', case=True, na=False) & (Generation_4_Pokemon['Name'] != 'Meganium'))]
+generation5_no_mega = Generation_5_Pokemon[~(Generation_5_Pokemon['Name'].str.contains('Mega', case=True, na=False) & (Generation_5_Pokemon['Name'] != 'Meganium'))]
+generation6_no_mega = Generation_6_Pokemon[~(Generation_6_Pokemon['Name'].str.contains('Mega', case=True, na=False) & (Generation_6_Pokemon['Name'] != 'Meganium'))]'''
+
+
+''' all_generations_no_mega = [generation1_no_mega, generation2_no_mega, generation3_no_mega, generation4_no_mega, generation5_no_mega, generation6_no_mega] '''
+
+then I sorted the type 1 and type 2 pokemon into their own groups
+
+generation1_type_1 = generation1_no_mega['Type 1'].value_counts()
+genetation2_type_1 = generation2_no_mega['Type 1'].value_counts()
+generation3_type_1 = generation3_no_mega['Type 1'].value_counts()
+generation4_type_1 = generation4_no_mega['Type 1'].value_counts()
+generation5_type_1 = generation5_no_mega['Type 1'].value_counts()
+generation6_type_1 = generation6_no_mega['Type 1'].value_counts()
+
+''' all_generation_type_1 = [generation1_type_1, genetation2_type_1, generation3_type_1, generation4_type_1, generation5_type_1, generation6_type_1] '''
+
+''' generation1_type_2 = generation1_no_mega['Type 2'].value_counts()
+genetation2_type_2 = generation2_no_mega['Type 2'].value_counts()
+generation3_type_2 = generation3_no_mega['Type 2'].value_counts()
+generation4_type_2 = generation4_no_mega['Type 2'].value_counts()
+generation5_type_2 = generation5_no_mega['Type 2'].value_counts()
+generation6_type_2 = generation6_no_mega['Type 2'].value_counts() '''
+
+''' all_generation_type_2 = [generation1_type_2, genetation2_type_2, generation3_type_2, generation4_type_2, generation5_type_2, generation6_type_2] '''
+
+I did this to make any sorting easier and to have them all grouped together
+
+Then I used some functions to see what the most common type 1 and type 2 were
+
+''' most_common_type_1 = Pokemon['Type 1'].mode()[0]
+print(f'The most common type 1 is {most_common_type_1}')
+
+most_common_type_2 = Pokemon['Type 2'].mode()[0]
+print(f'The most common type 2 is {most_common_type_2}') '''
+
+Then I made some visualizations of this data to back up my functions
+<img width="1229" height="702" alt="image" src="https://github.com/user-attachments/assets/547d18b9-a7bd-402e-bebb-fcfbfd40088e" />
+And came to the conclusion that water types were the most common type 1 in the 6 generations, I also did the same for all the type 2
+
+<img width="1242" height="702" alt="image" src="https://github.com/user-attachments/assets/f53d4a3c-0e94-4107-834a-0206233a1a92" />
+And here I came to the conclusion that flying types were the most common type 2
+
+Finally I made a heatmap of all the stats
+<img width="764" height="682" alt="image" src="https://github.com/user-attachments/assets/f23b8320-0a3c-4407-a928-9cf0da4585dd" />
+
+Along with a little surprise at the end just for fun that lets you look any pokemon name and see its stats
+
+To come back around to these questions I asked
+
+What is the most common type 1 and type 2 for pokemon?
+  The most common type 1 is water and the most common type 2 is flying
+  
+What is the correlation of all the stats of all the pokemon
+  Total is connected to everything
+  sp. atk, attack and sp.def have the highest correlation with total
+  sp. def and defense have a very strong correlation
+  atk and sp. def also have a strong correlation
+  speed has about no correlation to defense
+  
+How could I use this data?
+  I can use this data for a few things. I can try to predict the next generation type, I can use this information in the games, and I can show this data to others so they can see it and use it for similar or completely different purposes
+
+Again thank you to Michael Lomuscio on kaggle.com for this data
+
+
+
