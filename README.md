@@ -4,6 +4,8 @@ In this google colab notebook I perform a EDA on the first 6 generation of pokem
 
 https://www.kaggle.com/datasets/mlomuscio/pokemon
 
+colab notebook link : https://colab.research.google.com/drive/1q5vRZK-QuKpOjCzvK3in3BH736h4qwu-?usp=sharing
+
 credit to Michael Lomuscio on kaggle.com for posting this dataset for free and letting me use it.
 
 The main reason I decided to do pokemon was because I had a few questions I wanted to answer.
